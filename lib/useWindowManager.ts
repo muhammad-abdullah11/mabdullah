@@ -15,6 +15,7 @@ const INITIAL_WINDOWS: WindowState[] = [
   { id: "resume", isOpen: false, isMinimized: false, isFullscreen: false, zIndex: 10 },
   { id: "services", isOpen: false, isMinimized: false, isFullscreen: false, zIndex: 10 },
   { id: "contact", isOpen: false, isMinimized: false, isFullscreen: false, zIndex: 10 },
+  { id: "settings", isOpen: false, isMinimized: false, isFullscreen: false, zIndex: 10 },
 ];
 
 export function useWindowManager() {

@@ -11,4 +11,5 @@ export const APPS: AppConfig[] = [
   { id: "resume", label: "Resume", icon: "📄", shortIcon: "📄" },
   { id: "services", label: "Services", icon: "⚡", shortIcon: "⚡" },
   { id: "contact", label: "Contact Me", icon: "✉️", shortIcon: "✉️" },
+  { id: "settings", label: "Settings", icon: "⚙️", shortIcon: "⚙️" },
 ];
