@@ -3,14 +3,14 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 interface DockIconProps {
-  icon: string;
+  icon: any;
   label: string;
   isOpen: boolean;
   onClick: () => void;
   mouseX: ReturnType<typeof useMotionValue<number>>;
 }
 
-export default function DockIcon({ icon, label, isOpen, onClick, mouseX }: DockIconProps) {
+export default function DockIcon({ icon: Icon, label, isOpen, onClick, mouseX }: DockIconProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const distance = useTransform(mouseX, (val) => {
@@ -31,11 +31,11 @@ export default function DockIcon({ icon, label, isOpen, onClick, mouseX }: DockI
       <div className="relative">
         <motion.div
           style={{ width, height: width }}
-          className="flex items-center justify-center rounded-2xl text-2xl select-none
+          className="flex items-center justify-center rounded-2xl select-none
             bg-white/10 backdrop-blur-sm border border-white/20
             shadow-lg group-hover:shadow-blue-500/20 transition-shadow duration-200"
         >
-          {icon}
+          {typeof Icon === 'string' ? Icon : <Icon size={24} className="text-white" />}
         </motion.div>
         {isOpen && (
           <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white/80" />

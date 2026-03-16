@@ -21,15 +21,16 @@ export default function Dock({ windows, onIconClick, isMobile = false }: DockPro
         style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(20px)" }}>
         {APPS.map((app) => {
           const winState = windows.find((w) => w.id === app.id);
+          const Icon = app.icon;
           return (
             <button
               key={app.id}
               className="flex flex-col items-center gap-1 group"
               onClick={() => onIconClick(app.id)}
             >
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-2xl
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center
                 transition-all duration-200 ${winState?.isOpen ? "bg-white/20" : "bg-white/10"} border border-white/20`}>
-                {app.icon}
+                {typeof Icon === 'string' ? Icon : <Icon size={20} className="text-white" />}
               </div>
               <span className="text-white/70 text-[9px]">{app.label}</span>
             </button>

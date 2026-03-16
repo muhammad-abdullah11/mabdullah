@@ -7,7 +7,7 @@ import TrafficLights from "@/components/ui/TrafficLights";
 interface WindowWrapperProps {
   id: string;
   title: string;
-  icon: string;
+  icon: React.ReactNode;
   children: React.ReactNode;
   onClose: () => void;
   onMinimize: () => void;
@@ -59,7 +59,7 @@ export default function WindowWrapper({
         >
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
             <div className="flex items-center gap-2">
-              <span className="text-lg">{icon}</span>
+              <span>{icon}</span>
               <span className="text-white/90 font-semibold text-sm">{title}</span>
             </div>
             <TrafficLights onClose={onClose} onMinimize={onClose} onFullscreen={onClose} />
@@ -91,7 +91,7 @@ export default function WindowWrapper({
           <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10"
             style={{ background: "rgba(255,255,255,0.04)" }}>
             <TrafficLights onClose={onClose} onMinimize={onMinimize} onFullscreen={onFullscreen} />
-            <span className="text-sm">{icon}</span>
+            <span>{icon}</span>
             <span className="text-white/80 text-sm font-medium">{title}</span>
           </div>
           <div className="flex-1 overflow-auto">{children}</div>
@@ -140,7 +140,7 @@ export default function WindowWrapper({
             >
               <TrafficLights onClose={onClose} onMinimize={onMinimize} onFullscreen={onFullscreen} />
               <div className="flex-1 flex items-center justify-center gap-2">
-                <span className="text-sm">{icon}</span>
+                <span>{icon}</span>
                 <span className="text-white/80 text-sm font-medium">{title}</span>
               </div>
             </div>

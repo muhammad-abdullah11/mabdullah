@@ -7,6 +7,7 @@ import WindowWrapper from "../Windows/WindowWrapper";
 import Welcome from "../Windows/Welcome";
 import { useWindowManager } from "@/lib/useWindowManager";
 import { useIsMobile } from "@/lib/useIsMobile";
+import { APPS } from "@/constants/apps";
 
 import AboutMe from "../Windows/AboutMe";
 import Projects from "../Windows/Projects";
@@ -72,23 +73,17 @@ export default function Desktop() {
       {windows.map((w) => {
         if (!w.isOpen || w.isMinimized) return null;
         
-        const config = [
-          { id: "about", title: "About Me", icon: "👨‍💻" },
-          { id: "projects", title: "Projects", icon: "🗂️" },
-          { id: "resume", title: "Resume", icon: "📄" },
-          { id: "services", title: "Services", icon: "⚡" },
-          { id: "contact", title: "Contact Me", icon: "✉️" },
-          { id: "settings", title: "Settings", icon: "⚙️" },
-        ].find(c => c.id === w.id);
-        
-        if (!config) return null;
+        const app = APPS.find((a) => a.id === w.id);
+        if (!app) return null;
+
+        const Icon = app.icon;
 
         return (
           <WindowWrapper
             key={w.id}
             id={w.id}
-            title={config.title}
-            icon={config.icon}
+            title={app.label}
+            icon={typeof Icon === 'string' ? Icon : <Icon size={16} />}
             zIndex={w.zIndex}
             isFullscreen={w.isFullscreen}
             isMobile={isMobile}
