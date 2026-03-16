@@ -57,19 +57,18 @@ export default function Dock({ windows, onIconClick, isMobile = false }: DockPro
         {APPS.map((app, i) => {
           const winState = windows.find((w) => w.id === app.id);
           return (
-            <>
+            <div key={app.id}>
               {i === 2 && (
                 <div key="sep" className="w-px h-10 bg-white/20 mx-1 self-center" />
               )}
               <DockIcon
-                key={app.id}
                 icon={app.icon}
                 label={app.label}
                 isOpen={winState?.isOpen === true && winState?.isMinimized !== true}
                 onClick={() => onIconClick(app.id)}
                 mouseX={mouseX}
               />
-            </>
+            </div>
           );
         })}
       </div>
