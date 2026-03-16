@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import DockIcon from "@/components/UI/DockIcon";
+import DockIcon from "@/components/ui/DockIcon";
 import { APPS } from "@/constants/apps";
 import { WindowState } from "@/lib/useWindowManager";
 

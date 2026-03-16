@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Rnd } from "react-rnd";
-import TrafficLights from "@/components/UI/TrafficLights";
+import TrafficLights from "@/components/ui/TrafficLights";
 
 interface WindowWrapperProps {
   id: string;
