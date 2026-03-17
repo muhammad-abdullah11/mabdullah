@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Send, MapPin, Mail, MessageSquare, CheckCircle, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, MapPin, Mail, MessageSquare, CheckCircle, Github, Linkedin, Twitter, Phone } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -29,9 +29,7 @@ export default function ContactMe() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form data:", data);
     setIsSubmitting(false);
     setIsSuccess(true);
     reset();
@@ -50,7 +48,7 @@ export default function ContactMe() {
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">Get in Touch</h2>
             <p className="text-white/60 text-sm">
-              Have a project in mind or just want to chat? Drop me a message!
+              I'm always open to new opportunities and collaborations. Let's build something amazing!
             </p>
           </div>
 
@@ -61,7 +59,7 @@ export default function ContactMe() {
               </div>
               <div>
                 <p className="text-xs text-white/40 font-medium uppercase tracking-wider">Location</p>
-                <p className="text-sm">New York, NY (Remote)</p>
+                <p className="text-sm">Faisalabad, Pakistan (Remote)</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-white/80">
@@ -70,7 +68,16 @@ export default function ContactMe() {
               </div>
               <div>
                 <p className="text-xs text-white/40 font-medium uppercase tracking-wider">Email</p>
-                <p className="text-sm">hello@example.com</p>
+                <p className="text-sm">abdullahworld111@gmail.com</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 text-white/80">
+              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-green-400">
+                <Phone size={18} />
+              </div>
+              <div>
+                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">Phone</p>
+                <p className="text-sm">+92 315 6215289</p>
               </div>
             </div>
           </div>
@@ -81,9 +88,6 @@ export default function ContactMe() {
             </a>
             <a href="#" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-1">
               <Linkedin size={18} />
-            </a>
-            <a href="#" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-1">
-              <Twitter size={18} />
             </a>
           </div>
         </motion.div>
@@ -121,7 +125,7 @@ export default function ContactMe() {
                 <input
                   {...register("name")}
                   className={`w-full bg-black/40 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-blue-500/50'} rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors`}
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                 />
                 {errors.name && <p className="text-red-400 text-xs ml-1">{errors.name.message}</p>}
               </div>
@@ -131,7 +135,7 @@ export default function ContactMe() {
                 <input
                   {...register("email")}
                   className={`w-full bg-black/40 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-blue-500/50'} rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors`}
-                  placeholder="john@example.com"
+                  placeholder="your.email@example.com"
                 />
                 {errors.email && <p className="text-red-400 text-xs ml-1">{errors.email.message}</p>}
               </div>

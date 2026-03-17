@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Abdullah - Portfolio",
-  description: "Senior Full Stack interactive macOS-style portfolio website.",
+  title: "Muhammad Abdullah | Full-Stack Developer & MERN Architect",
+  description: "Explore the interactive portfolio of Muhammad Abdullah, a MERN stack specialist building modern digital experiences.",
 };
 
 export default function RootLayout({

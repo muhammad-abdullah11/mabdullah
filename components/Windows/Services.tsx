@@ -1,42 +1,48 @@
 "use client";
 import { motion } from "framer-motion";
-import { Layout, Palette, Server, Zap, Smartphone, Search } from "lucide-react";
+import { Layout, Palette, Server, Zap, Smartphone, Search, Terminal, Database } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Web Development",
+    title: "Full-Stack Development",
     icon: <Layout className="w-8 h-8 text-blue-400" />,
-    desc: "Building highly interactive, scalable web applications using React, Next.js, and modern tools.",
+    desc: "Building production-grade, scalable web applications using React 19, Next.js, and the MERN stack.",
     colSpan: "col-span-1 md:col-span-2",
   },
   {
-    title: "UI/UX Design",
+    title: "UI/UX Architecture",
     icon: <Palette className="w-8 h-8 text-purple-400" />,
-    desc: "Crafting beautiful, intuitive interfaces that provide exceptional user experiences.",
+    desc: "Crafting premium, high-fidelity interfaces with glassmorphism and liquid animations.",
     colSpan: "col-span-1",
   },
   {
-    title: "Backend Systems",
+    title: "Backend Excellence",
     icon: <Server className="w-8 h-8 text-green-400" />,
-    desc: "Designing robust APIs and database architectures for heavy workloads.",
+    desc: "Designing robust API architectures and handling complex database schemas for high-traffic apps.",
+    colSpan: "col-span-1",
+  },
+  {
+    title: "API Integration",
+    icon: <Terminal className="w-8 h-8 text-blue-300" />,
+    desc: "Seamlessly connecting third-party services like Stripe, Cloudinary, and Google Maps.",
     colSpan: "col-span-1",
   },
   {
     title: "Performance Optimization",
     icon: <Zap className="w-8 h-8 text-yellow-400" />,
-    desc: "Auditing and improving load times, rendering performance, and overall efficiency.",
-    colSpan: "col-span-1 md:col-span-2",
+    desc: "Auditing and optimizing load times and rendering performance for maximum efficiency.",
+    colSpan: "col-span-1",
   },
   {
     title: "Mobile App Strategy",
     icon: <Smartphone className="w-8 h-8 text-pink-400" />,
-    desc: "Creating progressive web apps and mobile-first responsive designs.",
+    desc: "Developing cross-platform mobile experiences and progressive web applications.",
     colSpan: "col-span-1 md:col-span-2",
   },
   {
     title: "Technical SEO",
     icon: <Search className="w-8 h-8 text-emerald-400" />,
-    desc: "Optimizing structure, metadata, and performance for maximum search visibility.",
+    desc: "Enhancing search visibility through optimized metadata, structure, and performance metrics.",
     colSpan: "col-span-1",
   },
 ];
@@ -57,8 +63,8 @@ export default function Services() {
 
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-white mb-3">My Expertise</h2>
-          <p className="text-white/60">Comprehensive solutions for modern digital problems</p>
+          <h2 className="text-3xl font-bold text-white mb-3">Professional Expertise</h2>
+          <p className="text-white/60">Delivering end-to-end digital excellence with modern stacks</p>
         </div>
 
         <motion.div
@@ -81,7 +87,7 @@ export default function Services() {
                 <h3 className="text-xl font-semibold text-white mb-2">{s.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed flex-1">{s.desc}</p>
                 <div className="mt-6 flex items-center text-xs font-medium text-white/40 group-hover:text-blue-400 transition-colors uppercase tracking-widest cursor-pointer">
-                  Learn more <span className="ml-2">→</span>
+                  Inquire Now <span className="ml-2">→</span>
                 </div>
               </div>
             </motion.div>

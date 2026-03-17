@@ -27,8 +27,8 @@ export default function MenuBar() {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="flex items-center gap-5">
-        <span className="text-white text-[15px] font-semibold select-none"></span>
-        <span className="text-white/90 text-[13px] font-medium select-none">Muhammad Abdullah</span>
+        <div className="w-5 h-5 rounded bg-white flex items-center justify-center text-[10px] font-bold text-black select-none">MA</div>
+        <span className="text-white/90 text-[13px] font-semibold select-none">Muhammad Abdullah</span>
         <span className="text-white/70 text-[13px] select-none hidden sm:block">File</span>
         <span className="text-white/70 text-[13px] select-none hidden sm:block">Edit</span>
         <span className="text-white/70 text-[13px] select-none hidden sm:block">View</span>
